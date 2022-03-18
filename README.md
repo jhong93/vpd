@@ -1,6 +1,6 @@
 # Code for *Video Pose Distillation*
 
-See our [project website](https://jhong93.github.io/projects/vpd.html) for the paper and details. To appear in ICCV 2021.
+See our [project website](https://jhong93.github.io/projects/vpd.html) for the paper and details. Published in ICCV 2021.
 
 ```
 @inproceedings{vpd_iccv21,

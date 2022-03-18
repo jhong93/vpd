@@ -64,6 +64,10 @@ class TennisDataset(_TrainDataset):
             if os.path.exists(mask_path):
                 mask = self._load_bg_mask(mask_path)
                 noise = torch.randn(img.shape) * RANDOM_NOISE_SD
+
+                # FIXME: this mask is being applied in the wrong direction
+                # and is jittering the pixels of the person instead of the
+                # background. Change to ~mask for the other direction.
                 noise[:, mask] = 0
                 img += noise
                 # img[:, mask] = 0
@@ -178,6 +182,10 @@ class GenericDataset(_TrainDataset):
             if os.path.exists(mask_path):
                 mask = self._load_bg_mask(mask_path)
                 noise = torch.randn(img.shape) * RANDOM_NOISE_SD
+
+                # FIXME: this mask is being applied in the wrong direction
+                # and is jittering the pixels of the person instead of the
+                # background. Change to ~mask for the other direction.
                 noise[:, mask] = 0
                 img += noise
                 # img[:, mask] = 0
