@@ -99,6 +99,8 @@ For detection, see ```detect.py```.
 
 Pre-trained VPD and VIPE* features/embeddings are available at [URL](https://drive.google.com/drive/folders/1QuZ6tUNalGQeU9CpQf_ryZ4y4a7zfE_l?usp=sharing).
 
+To use the Diving48 and FineGym (Floor Exercise) datasets, you need to download the labels per the READMEs in  the `diving48/data` and `finegym/data` subdirectories.
+
 ## Data formats
 
 ### Video naming conventions

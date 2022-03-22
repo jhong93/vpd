@@ -66,6 +66,7 @@ def extract_crops(video_path, box_dict, mask_dict, out_dir, dim, target_fps,
     for frame_num in range(n):
         ret, frame = vc.read()
         assert ret
+        buffer.push(frame)
 
         box = box_dict.get(frame_num)
         if box is not None:
@@ -134,7 +135,6 @@ def extract_crops(video_path, box_dict, mask_dict, out_dir, dim, target_fps,
                     cv2.imwrite(mask_crop_path, mask_crop, PNG_COMPRESSION)
 
         prev_box = box
-        buffer.push(frame)
     vc.release()
     cv2.destroyAllWindows()
 
